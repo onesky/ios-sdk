@@ -19,18 +19,12 @@ Steps
 2. Download [JSON for Objective-C](http://github.com/stig/json-framework/downloads)
 3. Drag Classes folder under the group Classes to XCode project. Check the box "copy" for prompt
 4. Insert following code to TransSample_Prefix.pch under
-
-```
-#import <UIKit/UIKit.h>
-```
-
-```
-#import "OneSkyHelper.h"
-```
+	```#import <UIKit/UIKit.h>```
+	```#import "OneSkyHelper.h"```
 5. Open TransSampleAppDelegate.m
 6. Add following code inside
 
-```
+	```
 	{
 	OneSkyHelper* helper = [OneSkyHelper sharedHelper];
 	helper.platformId = @1234; // the platform Id of iPhone App, found on OneSky UI
@@ -38,7 +32,7 @@ Steps
 	helper.defaultTableName = @"Localizable.strings"; // the file name you uploaded
 	[helper checkForUpdate];
 	}
-```
+	```
 
 	OneSkyString(@"Hello", @"Welcome message");
 
