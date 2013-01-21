@@ -25,7 +25,7 @@ Steps
 5. Open TransSampleAppDelegate.m
 6. Add following code inside
 
-	```
+	```objc
 	{
 	OneSkyHelper* helper = [OneSkyHelper sharedHelper];
 	helper.platformId = @1234; // the platform Id of iPhone App, found on OneSky UI
