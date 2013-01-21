@@ -11,3 +11,7 @@ helper.preferredLanguage = @"zh-Hant";
 [helper setFallbackJsonNamed:@"onesky.json"];
 [helper checkForUpdateOfPreferredLanguage];
 ```
+
+
+Pack the strings to be translated
+============================
