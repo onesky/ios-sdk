@@ -35,7 +35,9 @@ Steps
 	}
 	```
 
+	```objc
 	OneSkyString(@"Hello", @"Welcome message");
+	```
 
 7. Build and install it on iphone
 8. To test, exit the app, change the iPhone language, and re-launch the app. You will see the strings in the new language.
