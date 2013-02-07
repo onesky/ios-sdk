@@ -1,7 +1,6 @@
 #import "OneSkyWebViewController.h"
 #import "OneSkyHelper.h"
 #import "NSString+Additions.h"
-#import "JSON.h"
 
 @implementation OneSkyWebViewController
 
@@ -36,7 +35,10 @@
                      helper.platformId,
                      [lang URLEncodedString]];
     if ([helper.sortedHistoryKeys count] > 0) {
-        url = [url stringByAppendingFormat:@"&keys=%@", [[helper.sortedHistoryKeys JSONRepresentation] URLEncodedString]];
+        NSData* jsonData = [NSJSONSerialization dataWithJSONObject:helper.sortedHistoryKeys options:NSJSONWritingPrettyPrinted error:nil];
+        NSString* JSON = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+
+        url = [url stringByAppendingFormat:@"&keys=%@", [JSON URLEncodedString]];
     }
 //    url = [NSString stringWithFormat:@"http://fb-test.oneskyapp.com/index/cookie"];
 //    NSHTTPCookieStorage *cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];

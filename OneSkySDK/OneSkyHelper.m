@@ -2,7 +2,6 @@
 
 #import "NSMutableDictionary+Merge.h"
 #import "OneSkyDownloader.h"
-#import "JSON.h"
 
 
 static NSString* STRING_NOT_FOUND = @">>>*.*, STRING_NOT_FOUND!!!<<<";
@@ -239,7 +238,7 @@ static OneSkyHelper* _sharedHelper = nil;
     if (_debug) {
         NSLog(@"OneSky: response= %@", jsonString);
     }
-    NSDictionary* json = [jsonString JSONValue];
+    NSDictionary* json = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:nil];
     if (json 
         && !([[json objectForKey:@"response"] isKindOfClass:[NSString class]]
              && [[json objectForKey:@"response"] isEqualToString:@"up-to-date"])) {
@@ -273,8 +272,8 @@ static OneSkyHelper* _sharedHelper = nil;
 }
 
 - (void)setFallbackJsonPath:(NSString*)path {
-    NSString *jsonString = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:NULL];
-    NSDictionary *json = [jsonString JSONValue];
+    NSData *jsonData = [NSData dataWithContentsOfFile:path];
+    NSDictionary* json = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:nil];
     _fallbackDictionary = [[NSMutableDictionary dictionaryWithCapacity:10] retain];
     if ([json objectForKey:@"translation"]) {
         [_fallbackDictionary setDictionary:[json objectForKey:@"translation"]];
