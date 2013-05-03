@@ -246,6 +246,10 @@ static OneSkyHelper* _sharedHelper = nil;
             dict = [self localizationsDictionary];
             NSDictionary *newTranslationDict = [json objectForKey:@"translation"];
             if ([newTranslationDict isKindOfClass:[NSDictionary class]]) {
+                if ([dict isKindOfClass:[NSDictionary class]] &&
+                    ![dict isKindOfClass:[NSMutableDictionary class]]) {
+                    dict = [[dict mutableCopy] autorelease];
+                }
                 [dict mergingWithDictionary:newTranslationDict];
             } else if (_debug) {
                 NSLog(@"OneSky: not a dictionary returned, probably a empty array");

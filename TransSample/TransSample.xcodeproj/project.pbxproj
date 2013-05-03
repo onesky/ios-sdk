@@ -32,6 +32,7 @@
 		AEC3B35E13D8345B00C59A51 /* OneSkyHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC3B35B13D8345B00C59A51 /* OneSkyHelper.m */; };
 		AECA346D13D83CFD009483A7 /* NSMutableDictionary+Merge.m in Sources */ = {isa = PBXBuildFile; fileRef = AECA346C13D83CFD009483A7 /* NSMutableDictionary+Merge.m */; };
 		AED06BE61451115300E5E092 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AED06BE51451115300E5E092 /* libz.1.2.5.dylib */; };
+		AEEEF6AD1732A6A500B565BF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEEEF6AC1732A6A500B565BF /* Default-568h@2x.png */; };
 		AEF39DAF11E30BDE0011EB87 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEF39DAE11E30BDE0011EB87 /* Security.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,7 @@
 		AECA346B13D83CFD009483A7 /* NSMutableDictionary+Merge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+Merge.h"; sourceTree = "<group>"; };
 		AECA346C13D83CFD009483A7 /* NSMutableDictionary+Merge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+Merge.m"; sourceTree = "<group>"; };
 		AED06BE51451115300E5E092 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
+		AEEEF6AC1732A6A500B565BF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		AEF39DAE11E30BDE0011EB87 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -123,7 +125,6 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				AED06BE51451115300E5E092 /* libz.1.2.5.dylib */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -147,6 +148,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AEEEF6AC1732A6A500B565BF /* Default-568h@2x.png */,
 				AE8FFA8213F0BDF200BE709E /* onesky.json */,
 				28F335F01007B36200424DE2 /* RootViewController.xib */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
@@ -159,6 +161,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AED06BE51451115300E5E092 /* libz.1.2.5.dylib */,
 				AEF39DAE11E30BDE0011EB87 /* Security.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
@@ -234,7 +237,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0460;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "TransSample" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -267,6 +270,7 @@
 				AE7E5D6A11E1919100053970 /* Localizable.strings in Resources */,
 				AE8FFA8313F0BDF200BE709E /* onesky.json in Resources */,
 				AE93B5EA13F4BB9000D77C39 /* OneSkyWebViewController.xib in Resources */,
+				AEEEF6AD1732A6A500B565BF /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
