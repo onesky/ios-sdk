@@ -54,6 +54,10 @@ static OneSkyHelper* _sharedHelper = nil;
             [_localizationsDictionary writeToFile:self.plistFilePath atomically:YES];
         }
     }
+    if ([_localizationsDictionary isKindOfClass:[NSDictionary class]] &&
+        ![_localizationsDictionary isKindOfClass:[NSMutableDictionary class]]) {
+        _localizationsDictionary = [[_localizationsDictionary mutableCopy] autorelease];
+    }
     return _localizationsDictionary;
 }
 
@@ -246,9 +250,8 @@ static OneSkyHelper* _sharedHelper = nil;
             dict = [self localizationsDictionary];
             NSDictionary *newTranslationDict = [json objectForKey:@"translation"];
             if ([newTranslationDict isKindOfClass:[NSDictionary class]]) {
-                if ([dict isKindOfClass:[NSDictionary class]] &&
-                    ![dict isKindOfClass:[NSMutableDictionary class]]) {
-                    dict = [[dict mutableCopy] autorelease];
+                if (_debug) {
+                    NSLog(@"OneSky: mergingWithDictionary:newTranslationDict");
                 }
                 [dict mergingWithDictionary:newTranslationDict];
             } else if (_debug) {
