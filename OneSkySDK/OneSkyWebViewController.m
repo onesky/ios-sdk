@@ -39,6 +39,7 @@
         NSString* JSON = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
 
         url = [url stringByAppendingFormat:@"&keys=%@", [JSON URLEncodedString]];
+        [JSON release];
     }
 //    url = [NSString stringWithFormat:@"http://fb-test.oneskyapp.com/index/cookie"];
 //    NSHTTPCookieStorage *cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];

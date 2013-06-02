@@ -145,6 +145,7 @@ static OneSkyHelper* _sharedHelper = nil;
 - (NSArray*)history {
     NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile:self.historyPlistFilePath];
     NSMutableArray *history = [data objectForKey:@"history"];
+    [data release];
     if (!history) {
         return [NSArray array];
     }
